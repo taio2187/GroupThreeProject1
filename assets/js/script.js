@@ -5,6 +5,7 @@ fetch('https://api.covid19api.com/countries')
 .then(function(response) {
     console.log(response);
 });
+
 fetch('https://api.covid19api.com/country/south-africa/status/confirmed?from=2021-03-11T00:00:00Z&to=2021-04-03T00:00:00Z'
 )
 .then(function(response2) {
@@ -12,4 +13,12 @@ fetch('https://api.covid19api.com/country/south-africa/status/confirmed?from=202
 })
 .then(function(response2) {
     console.log(response2);
+});
+
+fetch('https://api.kanye.rest')
+.then(function(response3) {
+    return response3.json();
+})
+.then(function(response3) {
+    console.log(response3);
 });
