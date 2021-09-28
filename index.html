@@ -31,43 +31,35 @@
         
     </header>    
     <main>
-        <div class="column is-4 is-vcentered"></div>
-        
+      <div class="columns is-vcentered is-mobile">
         <div class="column"></div>
-        <div class="columns is-vcentered is-mobile">
-            <div class="column"></div>
-            <div class="column">
-              <p class="bd-notification is-info"><select id="countries-options">Select Country</select></p>
-              <div class="box">
-                I'm in a box.
-              </div>
-              <div class="columns is-mobile">
-                <div class="column is-centered is-narrow has-text-centered">
-                    <p class="bd-notification is-info">       
-                    <button class="button is-danger is-rounded" id="date-range">Date Range</button>
-                    </p>
-                </div>
-                <div class="column is-centered is-narrow has-text-centered">
-                    <p class="bd-notification is-info">
-                      <button class="button is-primary is-rounded" id="kanye-quote-btn" onclick="kanyeFetch()">Kanye Quote</button>
-                    </p>
-                </div>
-              </div>
-            </div>
-          
-          
-
-
-
-
-
-
-
-
         <div class="column">
- 
-        
+          <p class="bd-notification is-info">
+            <div class="select">
+              <select id="countries-options"></select>
+            </div>
+          </p>
+          <div class="box" id="covid-container">
+            COVID Info.
+          </div>
+          <div class="box" id="kanye-container">
+            I'm in a box.
+          </div>
+          <div class="columns is-mobile">
+            <div class="column is-centered is-narrow has-text-centered">
+                <p class="bd-notification is-info">       
+                <button class="button is-danger is-rounded" id="date-range">Date Range</button>
+                </p>
+            </div>
+            <div class="column is-centered is-narrow has-text-centered">
+                <p class="bd-notification is-info">
+                  <button class="button is-primary is-rounded" id="kanye-quote-btn" onclick="kanyeFetch()">Kanye Quote</button>
+                </p>
+            </div>
+          </div>
         </div>
+        <div class="column"></div>
+      </div>
     
     </main>
     <script src="assets/js/script.js"></script>
