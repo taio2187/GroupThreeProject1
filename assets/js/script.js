@@ -15,10 +15,14 @@ fetch('https://api.covid19api.com/country/south-africa/status/confirmed?from=202
     console.log(response2);
 });
 
+function kanyeFetch() {
 fetch('https://api.kanye.rest')
 .then(function(response3) {
     return response3.json();
 })
 .then(function(response3) {
     console.log(response3);
+    let kanyeQuote = document.querySelector('#kanye-container');
+    kanyeQuote.innerHTML = '<p>'+response3.quote+'</p>';
 });
+}
