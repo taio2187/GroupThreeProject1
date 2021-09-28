@@ -23,6 +23,6 @@ fetch('https://api.kanye.rest')
 .then(function(response3) {
     console.log(response3);
     let kanyeQuote = document.querySelector('#kanye-container');
-    kanyeQuote.innerHTML = '<p>'+response3.quote+'</p>';
+    kanyeQuote.innerHTML = '<p>\"'+response3.quote+'\" -Kanye West</p>';
 });
 }
