@@ -16,7 +16,7 @@ fetch('https://api.covid19api.com/country/south-africa/status/confirmed?from=202
 });
 
 function kanyeFetch() {
-fetch('https://api.kanye.rest')
+fetch('https://api.kanye.rest/')
 .then(function(response3) {
     return response3.json();
 })
