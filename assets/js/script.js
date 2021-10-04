@@ -6,18 +6,33 @@ function dataFetch() {
     })
     .then(function(response2) {
         console.log(response2);
+        let instructionsEl = document.getElementById("instructions");
+        instructionsEl.classList.add("is-hidden");
+
         let covidData = document.querySelector('#covid-container');
         let country = document.querySelector('#countries-options');
+        let countryName = document.getElementById("countryN");
+        let updateEl = document.getElementById("upDate");
+        let countryCodeEl = document.getElementById("countryCode");
+        let confirmedEl = document.getElementById("confirmedCases");
+        let deathsEl = document.getElementById("deaths");
+        let stringencyEl = document.getElementById("stringency");
+        let stringencyLgacyEl = document.getElementById("stringencyLegacy");
 
         let selectedCountry = country.options[country.selectedIndex].text;
-        covidData.innerHTML = '<p class=\"subtitle is-5\"> <strong>Country: </strong> ' + selectedCountry +'</p>';
+        countryName.innerHTML = selectedCountry;
         
-        let date = '2021-04-01'
-        covidData.innerHTML = '<p class=\"subtitle is-5\"> <strong>Last Update: </strong> ' + date +'</p>';
+        
+        let date = '2021-04-01';
+        updateEl.innerHTML = date;
     
         let selectedCountryCode = country.options[country.selectedIndex].value;
-        let countryData = response2.data["2021-04-01"];
-            
+        countryCodeEl.innerHTML = selectedCountryCode;
+
+        if (selectedCountryCode === response2.data['2021-04-01'].object) {
+            let info = response2.data['2021-04-01'].selectedCountryCode.confirmed;
+            console.log(info);
+        }
     
         //covidData.innerHTML = '<p class=\"subtitle is-5\"> <strong>Confirmed Cases:</strong> ' + confirmedCases +'</p>';
     
