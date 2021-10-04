@@ -25,3 +25,12 @@ fetch('https://api.kanye.rest/')
     kanyeQuote.innerHTML = '<p>\"'+response3.quote+'\" -Kanye West</p>';
 });
 }
+
+var selectedCountry = countryCode 
+    
+
+
+
+var saveSearch = function () {
+
+}
