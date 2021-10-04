@@ -1,17 +1,27 @@
 function dataFetch() {
-fetch('https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2021-03-01/2021-04-01'
-)
-.then(function(response2) {
-    return response2.json();
-})
-.then(function(response2) {
-    console.log(response2);
-    let covidData = document.querySelector('#covid-container');
-    let country = document.querySelector('#countries-options');
-    let countryCode = country.value;
-    let date = '2021-04-01'
-    covidData.innerHTML = '<p>'+response2.data.date.countryCode+'</p>';
-});
+    fetch('https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2021-03-01/2021-04-01'
+    )
+    .then(function(response2) {
+        return response2.json();
+    })
+    .then(function(response2) {
+        console.log(response2);
+        let covidData = document.querySelector('#covid-container');
+        let country = document.querySelector('#countries-options');
+
+        let selectedCountry = country.options[country.selectedIndex].text;
+        covidData.innerHTML = '<p class=\"subtitle is-5\"> <strong>Country: </strong> ' + selectedCountry +'</p>';
+        
+        let date = '2021-04-01'
+        covidData.innerHTML = '<p class=\"subtitle is-5\"> <strong>Last Update: </strong> ' + date +'</p>';
+    
+        let selectedCountryCode = country.options[country.selectedIndex].value;
+        let countryData = response2.data["2021-04-01"];
+            
+    
+        //covidData.innerHTML = '<p class=\"subtitle is-5\"> <strong>Confirmed Cases:</strong> ' + confirmedCases +'</p>';
+    
+    });
 }
 
 function kanyeFetch() {
