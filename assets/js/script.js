@@ -26,11 +26,12 @@ fetch('https://api.kanye.rest/')
 });
 }
 
-var selectedCountry = countryCode 
-    
+$(function () {
+    $('#countries-options').change(function () {
+        localStorage.setItem('todoData', this.value);
+    });
+    if (localStorage.getItem('todoData')) {
 
-
-
-var saveSearch = function () {
-
-}
+        $('#countries-options').val(localStorage.getItem('todoData')).trigger('change');
+    }
+});
